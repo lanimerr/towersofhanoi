@@ -1,0 +1,49 @@
+var pegs = [
+  {peg1: 1, count: [5, 4, 3, 2, 1]},
+  {peg2: 2, count: []},
+  {peg3: 3, count: []},
+]
+
+var board = pegs.map(function(peg){
+  return peg.count;
+});
+
+
+var gameWon = false;
+
+
+var game = function(pegCount, discCount){
+  this.board = [];
+  this.pegCount = pegCount;
+  this.discCount = discCount;
+}
+
+game.prototype.reset = function(){
+   console.log('Game reset');
+   setTimeout(() => {
+    location.reload();
+   }, 5000)
+}
+
+game.prototype.checkWinner = function(peg){
+  if(performance.length == this.discCount){
+    console.log('You won!')
+    gameWon =  true;
+    if(gameWon = true){
+      reset(); 
+    }
+  }
+}
+
+var towerOfHanoi = function(n, start, to, finish){
+  if(n == 1){
+    console.log(to + "->" + finish);
+  }
+  towerOfHanoi(n - 1, start, finish, to);
+  towerOfHanoi(1, start, to, finish);
+  towerOfHanoi(n-1, start, to, finish);
+
+};
+
+
+// I had trouble with my command line and github, Unfourtnately I had to send it this way. I will work on that this week as to not have it continue this way.
